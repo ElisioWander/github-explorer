@@ -10,6 +10,9 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'] //para reconhecer os formatos dos arquivos desejados
     },
+    devServer: {
+        contentBase: path.resolve(__dirname, 'public') //permite fazer alterações no projeto sem precisar reiniciar o webpack atravez do terminal todas as vezes
+    },
     plugins: [
         new HtmlWebpackPlugin({ //cria um arquivo script que carrega o bundle.js dentro do html para não precisar fazer isso manualmente
             template: path.resolve(__dirname, 'public', 'index.html') 
