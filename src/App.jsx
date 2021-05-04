@@ -1,5 +1,16 @@
-export function App() {
-    throw console.log("checando o erro")
+import { RepositoryList } from './Components/RepositoryList'
+import { Counter } from './Components/Counter'
 
-    return <h1>Hello World</h1>
+import './styles/global.scss'
+
+export function App() {
+    return (
+        <>
+            <RepositoryList />
+            <RepositoryList />
+            <RepositoryList />
+            <RepositoryList />
+            <Counter />
+        </>
+    )
 }
