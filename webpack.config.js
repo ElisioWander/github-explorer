@@ -1,7 +1,11 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin') 
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const isDevelopment = process.env.NODE_ENV !== 'production' //definindo variável de ambiente
 
 module.exports = {
+    mode: isDevelopment ? 'development' : 'production', //ambiente de produção ou desenvolvimento
+    devtool: isDevelopment ? 'eval-source-map' : 'source-map', //configurando a forma que o erro aparece no console do navegador e também o ambiente que será utilizado
     entry: path.resolve(__dirname, 'src', 'index.jsx'), //arquivo de entrada
     output: {
         path: path.resolve(__dirname, 'dist'), //arquivo de saída
