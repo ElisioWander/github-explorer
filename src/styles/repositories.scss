@@ -1,0 +1,44 @@
+section.repository-list {
+    padding: 24px;
+
+    h1 {
+        margin-bottom: 16px;
+
+        font-size: 32px;
+
+        color: #111;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+
+        list-style: none;
+
+        li {
+            display: grid;
+            grid-template-rows: 20px 100px 10px;
+
+            padding: 16px 24px;
+
+            box-shadow: 4px 4px 4px -6px;
+
+            background-color: rgb(230, 233, 192);
+
+            p {
+                margin-top: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                
+                color: #5f47ad;
+
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
