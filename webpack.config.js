@@ -7,13 +7,13 @@ const isDevelopment = process.env.NODE_ENV !== 'production' //definindo variáve
 module.exports = {
     mode: isDevelopment ? 'development' : 'production', //ambiente de produção ou desenvolvimento
     devtool: isDevelopment ? 'eval-source-map' : 'source-map', //configurando a forma que o erro aparece no console do navegador e também o ambiente que será utilizado
-    entry: path.resolve(__dirname, 'src', 'index.jsx'), //arquivo de entrada
+    entry: path.resolve(__dirname, 'src', 'index.tsx'), //arquivo de entrada
     output: {
         path: path.resolve(__dirname, 'dist'), //arquivo de saída
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx'] //para reconhecer os formatos dos arquivos desejados
+        extensions: ['.js', '.jsx', '.ts', '.tsx'] //para reconhecer os formatos dos arquivos desejados
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'public'), //permite fazer alterações no projeto sem precisar reiniciar o webpack atravez do terminal todas as vezes
@@ -28,7 +28,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$/, //identificar que o arquivo deve ter o final .jsx para ser executado de forma correta
+                test: /\.(j|t)sx$/, //identificar que o arquivo deve ter o final .jsx para ser executado de forma correta
                 exclude: /node_modules/, //deixar de fora todos os arquivos da node_modules porque os criadores das dependências que nela reside já fizeram os ajustes necessários
                 use: {
                     loader: 'babel-loader',
